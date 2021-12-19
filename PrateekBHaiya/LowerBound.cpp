@@ -3,37 +3,37 @@ using namespace std;
 
 int lowerBound(vector<int> A, int Val)
 {
-    vector<int> arr;
-    for (int i = 0; i < A.size(); i++)
+    int s = 0;
+    int lessVal = 0;
+    int e = A.size() - 1;
+    while (s <= e)
     {
-        int diff = Val - A[i];
-        arr.push_back(diff);
-    }
-    int index = -1;
-    int mini = INT_MAX;
-    for (int i = 0; i < arr.size(); i++)
-    {
-        if (arr[i] > 0)
+        int mid = (s + e) / 2;
+        if (A[mid] == Val)
         {
-            mini = min(arr[i], mini);
+            return Val;
+        }
+        else if (A[mid] < Val)
+        {
+            lessVal = A[mid];
+            s = mid + 1;
+        }
+        else
+        {
+            e = mid - 1;
         }
     }
-    for (int i = 0; i < arr.size(); i++)
-    {
-        if (mini == arr[i])
-        {
-            int found = A[i];
-            return found;
-        }
-    }
-    return -1;
+    if (lessVal == 0)
+        return -1;
+    else
+        return lessVal;
 }
 int main()
 {
-    // vector<int> A = {-1, -1, 2, 3, 5};
+    vector<int> A = {2, 1, 8, 8, 7};
+    int val = 0;
+    // vector<int> A = {1, 2, 3, 4, 6};
     // int val = 4;
-    vector<int> A = {1, 2, 3, 4, 6};
-    int val = 4;
     cout << lowerBound(A, val);
     return 0;
 }
