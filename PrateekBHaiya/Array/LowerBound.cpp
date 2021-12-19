@@ -1,3 +1,5 @@
+// time complexity O(log N)
+// Binary search
 #include <bits/stdc++.h>
 using namespace std;
 

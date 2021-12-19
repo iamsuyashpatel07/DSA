@@ -1,3 +1,6 @@
+// kadane Algorithm
+// tc O(n)
+
 #include <bits/stdc++.h>
 using namespace std;
 // Edge case {-1,-6,-7,0}
