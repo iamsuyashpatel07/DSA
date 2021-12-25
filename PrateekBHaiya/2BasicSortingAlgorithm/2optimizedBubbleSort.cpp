@@ -1,5 +1,11 @@
 // time complexity O(N*N)
+// Bubble Sort has time complexity O(n*n)
+// that means whole array will traversed n number of times
 
+// But, using swap helps us to find out wether to proceed for further iterations or not.
+// like in case you have said when array is already sorted it will traverse array only once
+// and come out of loop and return the function
+// so Time complexity for this specific case comes out to be O(n)..
 #include <iostream>
 using namespace std;
 void bubblesort(int arr[], int size)
