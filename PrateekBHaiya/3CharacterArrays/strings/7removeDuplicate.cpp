@@ -5,13 +5,13 @@ using namespace std;
 string removeDuplicate(string s)
 {
     set<char>
-        ss(s.begin(), s.end());
-    string str;
-    for (auto x : ss)
+        fs(s.begin(), s.end());
+    string stri;
+    for (auto x : fs)
     {
-        str.push_back(x);
+        stri.push_back(x);
     }
-    return str;
+    return stri;
 }
 int main()
 {
