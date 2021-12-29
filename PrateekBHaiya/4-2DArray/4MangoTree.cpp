@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-
+// https://www.iarcs.org.in/inoi/online-study-material/topics/prefix-sums-ramus-mango-trees.php
 // using brute_force approach
 
 // O(n^2 * n^2) approach.
