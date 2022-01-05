@@ -1,3 +1,5 @@
+// https://en.wikipedia.org/wiki/In-place_algorithm
+// time complexity O(logn)
 #include <bits/stdc++.h>
 using namespace std;
 
