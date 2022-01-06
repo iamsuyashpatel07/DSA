@@ -30,6 +30,14 @@ int clearIbits(int n, int i)
     n = (n & mask);
     return n;
 }
+int clearbitsInRange(int n, int i, int j)
+{
+    int a = (~0) << (j + 1);
+    int b = (1 << i) - 1;
+    int mask = a | b;
+    n = (n & mask);
+    return n;
+}
 int main()
 {
     int n = 5;
@@ -51,5 +59,6 @@ step 3: compare with zero if ith bit is zero then it will equal to 0 else it wil
     cout << setIthbit(n, i) << endl;
     cout << updateIthbit(n, i, 1) << endl;
     cout << clearIbits(n, i) << endl;
+    cout << clearbitsInRange(n, 0, 1) << endl;
     return 0;
 }
