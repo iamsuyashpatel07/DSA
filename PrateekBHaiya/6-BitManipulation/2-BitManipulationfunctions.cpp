@@ -17,6 +17,19 @@ int setIthbit(int n, int i)
     n = (n | mask);
     return n;
 }
+int updateIthbit(int n, int i, int j)
+{
+    clearIthbit(n, i);
+    int mask = (j << i);
+    n = (n | mask);
+    return n;
+}
+int clearIbits(int n, int i)
+{
+    int mask = (-1 << i);
+    n = (n & mask);
+    return n;
+}
 int main()
 {
     int n = 5;
@@ -36,5 +49,7 @@ step 3: compare with zero if ith bit is zero then it will equal to 0 else it wil
     */
     cout << clearIthbit(n, i) << endl;
     cout << setIthbit(n, i) << endl;
+    cout << updateIthbit(n, i, 1) << endl;
+    cout << clearIbits(n, i) << endl;
     return 0;
 }
