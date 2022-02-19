@@ -1,3 +1,6 @@
+// time complexity O(2^(m+n))
+//  Mathematical way to solve this question is
+//  [(m-1+n-1)!/{(m+1)!*(n-1)!}]
 #include <iostream>
 using namespace std;
 int gridways(int i, int j, int m, int n)
