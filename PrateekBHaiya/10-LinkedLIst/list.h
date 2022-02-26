@@ -55,4 +55,21 @@ public:
             tail = n;
         }
     }
+    void insert(int data, int pos)
+    {
+        if (pos == 0)
+        {
+            push_front(data);
+            return;
+        }
+        // Otherwise
+        Node *temp = head;
+        for (int jump = 0; jump <= pos - 1; jump++)
+        {
+            temp = temp->next;
+        }
+        Node *n = new Node(data);
+        n->next = temp->next;
+        temp->next = n;
+    }
 };
