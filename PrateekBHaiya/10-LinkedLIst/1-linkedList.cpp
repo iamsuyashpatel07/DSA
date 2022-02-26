@@ -11,6 +11,7 @@ int main()
     l.push_back(4);
     l.insert(2, 2);
     l.insert(10, 0);
+    l.pop_front();
 
     Node *head = l.begin();
     while (head != NULL)
@@ -20,7 +21,7 @@ int main()
     }
     cout << endl
          << l.search(0) << endl
-         << l.recursiveSearch(10);
+         << l.recursiveSearch(10) << endl;
 
     return 0;
 }

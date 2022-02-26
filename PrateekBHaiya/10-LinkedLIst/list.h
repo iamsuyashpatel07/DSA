@@ -1,3 +1,5 @@
+#include <iostream>
+using namespace std;
 // Forward Declaration
 class List;
 class Node
@@ -10,6 +12,14 @@ public:
     int getData()
     {
         return data;
+    }
+    ~Node()
+    {
+        if (next != NULL)
+        {
+            delete next;
+        }
+        cout << "Deleting Node with Data" << data << endl;
     }
     friend class List;
 };
@@ -114,5 +124,20 @@ public:
     {
         int idx = searchHelper(head, key);
         return idx;
+    }
+    void pop_front()
+    {
+        Node *temp = head;
+        head = head->next;
+        temp->next = NULL;
+        delete temp;
+    }
+    ~List()
+    {
+        if (head != NULL)
+        {
+            delete head;
+            head = NULL;
+        }
     }
 };
