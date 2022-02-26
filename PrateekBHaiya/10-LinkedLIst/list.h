@@ -17,6 +17,26 @@ class List
 {
     Node *head;
     Node *tail;
+    int searchHelper(Node *start, int key)
+    {
+        // base case
+        if (start == NULL)
+        {
+            return -1;
+        }
+        // value matches
+        if (start->data == key)
+        {
+            return 0;
+        }
+        // remaining part of the linked list
+        int subIdx = searchHelper(start->next, key);
+        if (subIdx == -1)
+        {
+            return -1;
+        }
+        return subIdx + 1;
+    }
 
 public:
     List() : head(NULL), tail(NULL) {}
@@ -89,5 +109,10 @@ public:
             temp = temp->next;
         }
         return -1;
+    }
+    int recursiveSearch(int key)
+    {
+        int idx = searchHelper(head, key);
+        return idx;
     }
 };

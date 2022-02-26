@@ -19,6 +19,8 @@ int main()
         head = head->next;
     }
     cout << endl
-         << l.search(0);
+         << l.search(0) << endl
+         << l.recursiveSearch(10);
+
     return 0;
 }
