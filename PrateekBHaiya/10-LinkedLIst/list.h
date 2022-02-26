@@ -72,4 +72,22 @@ public:
         n->next = temp->next;
         temp->next = n;
     }
+    // Searching in a Linked List
+    int search(int key)
+    {
+
+        Node *temp = head;
+        int idx = 0;
+
+        while (temp != NULL)
+        {
+            if (temp->data == key)
+            {
+                return idx;
+            }
+            idx++;
+            temp = temp->next;
+        }
+        return -1;
+    }
 };

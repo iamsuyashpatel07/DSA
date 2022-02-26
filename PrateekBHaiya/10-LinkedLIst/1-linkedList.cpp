@@ -18,5 +18,7 @@ int main()
         cout << head->getData() << "->";
         head = head->next;
     }
+    cout << endl
+         << l.search(0);
     return 0;
 }
