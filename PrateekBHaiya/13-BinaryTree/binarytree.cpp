@@ -4,6 +4,7 @@ using namespace std;
 // Input : 1 2 4 -1 -1 5 7 -1 -1 -1 3 -1 6 -1 -1
 // Preorder Traversal Output : 1 2 4 5 7 3 6
 // Inorder Traversal Output : 4 2 7 5 1 3 6
+// Postorder Traversal Output : 4 7 5 2 6 3 1
 class Node
 {
 public:
@@ -51,12 +52,26 @@ void printInorder(Node *root)
     cout << root->data << " ";
     printInorder(root->right);
 }
+void postOrder(Node *root)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+    postOrder(root->left);
+    postOrder(root->right);
+    cout << root->data << " ";
+}
 int main()
 {
     Node *root = buildTree();
     printPreorder(root);
     cout << endl;
+
     printInorder(root);
+    cout << endl;
+
+    postOrder(root);
     cout << endl;
 }
 
