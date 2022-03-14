@@ -1,3 +1,4 @@
+```(lang:Javascript)
 import Image from "next/image";
 import logo from "../public/images/logo.png";
 import React from "react";
@@ -373,3 +374,4 @@ function Header2() {
 }
 
 export default Header2;
+```
