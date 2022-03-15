@@ -86,6 +86,6 @@ int main()
     Node *root = buildTree();
     levelOrderPrint(root);
     cout << endl
-         << "Height of a Tree" << height(root) << endl;
+         << "Height of a Tree " << height(root) << endl;
     return 0;
 }
