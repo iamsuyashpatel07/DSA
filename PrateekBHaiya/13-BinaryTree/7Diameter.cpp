@@ -49,6 +49,8 @@ int height(Node *root)
 }
 int Diameter(Node *root)
 {
+    // Time Complexity O(N^2)
+    // Bottom up Approach
     // base case
     if (root == NULL)
     {
@@ -60,11 +62,39 @@ int Diameter(Node *root)
     int D3 = Diameter(root->right);
     return max(D1, max(D2, D3));
 }
+
+//---------------Diameter Optimised
+class HDPair
+{
+public:
+    int height;
+    int diameter;
+};
+HDPair optDiameter(Node *root)
+{
+    // Time Complexity O(N)
+    HDPair p;
+    if (root == NULL)
+    {
+        p.height = p.diameter = 0;
+        return p;
+    }
+    // Otherwise
+    HDPair Left = optDiameter(root->left);
+    HDPair Right = optDiameter(root->right);
+    p.height = max(Left.height, Right.height) + 1;
+    int D1 = Left.height + Right.height;
+    int D2 = Left.diameter;
+    int D3 = Right.diameter;
+    p.diameter = max(D1, max(D2, D3));
+    return p;
+}
 int main()
 {
     Node *root = buildTree();
-    int sum = Diameter(root);
     cout << endl
-         << "Diameter is " << sum;
+         << "Diameter is " << Diameter(root);
+    cout << endl
+         << "Opt Diameter is " << optDiameter(root).diameter << endl;
     return 0;
 }
