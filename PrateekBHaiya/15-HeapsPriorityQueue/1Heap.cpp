@@ -23,6 +23,6 @@ Relationship between Parent and Children
   i
  / \
 2i 2i+1
-
 */
 #include <iostream>
+using namespace std;
