@@ -27,6 +27,36 @@ Relationship between Parent and Children
 -swap v[1] and v[last] =>O(1)
 -Remove the last element =>O(1)
 -Heapify(1)=>O(logN)
+
+By default it will be Max Heap
+i.e priority_queue<int>heap
+In order to make it MinHeap we pass 2 more paramete
+i.e priority_queue<int,vector<int>,greater<int>>heap
 */
 #include <iostream>
+#include <queue>
 using namespace std;
+class Compare
+{
+public:
+  bool operator()(int a, int b)
+  {
+    return a > b;
+  }
+};
+int main()
+{
+  int arr[] = {10, 15, 20, 13, 6, 90};
+  int n = sizeof(arr) / sizeof(arr[0]);
+  priority_queue<int, vector<int>, greater<int>> heap;
+  for (int x : arr)
+  {
+    heap.push(x);
+  }
+  while (!heap.empty())
+  {
+    cout << heap.top() << endl;
+    heap.pop();
+  }
+  return 0;
+}
