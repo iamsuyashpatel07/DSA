@@ -23,6 +23,10 @@ Relationship between Parent and Children
   i
  / \
 2i 2i+1
+->Remove Min()/pop()
+-swap v[1] and v[last] =>O(1)
+-Remove the last element =>O(1)
+-Heapify(1)=>O(logN)
 */
 #include <iostream>
 using namespace std;

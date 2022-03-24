@@ -1,8 +1,29 @@
 #include <vector>
 using namespace std;
+// Min Heap
 class Heap
 {
     vector<int> v;
+    void heapify(int i)
+    {
+        // Tc:log(N)
+        int right = 2 * i;
+        int left = 2 * i + 1;
+        int minIdx = i;
+        if (left < v.size() and v[left] < v[i])
+        {
+            minIdx = left;
+        }
+        if (right < v.size() and v[right] < v[minIdx])
+        {
+            minIdx = right;
+        }
+        if (minIdx != 1)
+        {
+            swap(v[i], v[minIdx]);
+            heapify(minIdx);
+        }
+    }
 
 public:
     Heap(int default_size = 10)
@@ -12,7 +33,7 @@ public:
     }
     void push(int data)
     {
-        // ass data to end of the heap
+        // add data to end of the heap
 
         v.push_back(data);
         int idx = v.size() - 1;
@@ -23,5 +44,23 @@ public:
             idx = parent;
             parent = parent / 2;
         }
+    }
+    // return min element
+    int top()
+    {
+        return v[1];
+    }
+    // Remove min element
+    void pop()
+    {
+        // 1.Swap first and last element
+        int idx = v.size() - 1;
+        swap(v[1], v[idx]);
+        v.pop_back();
+        heapify(1);
+    }
+    bool empty()
+    {
+        return v.size() == 1;
     }
 };
