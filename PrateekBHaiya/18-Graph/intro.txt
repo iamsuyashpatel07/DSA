@@ -1,0 +1,25 @@
+graph
+weighted and unweighted
+directed and undirected
+
+
+storing a graph
+Adjacency List
+Adjacency Matrix
+Edge List
+2D Matrix(Implicit Graph)
+
+
+
+
+Application 
+1)shortest path
+2)social Network
+3)shortest cyclic route
+4)Dependency graphs
+5)Routing Algorithm
+6)Computation Graph
+7)computer vision
+8)web Crawlers
+9)physics and chemistry
+10)graph databases
