@@ -11,5 +11,12 @@ leftmost or the rightmost wine without re-ordering.
 Find the maximum profit you can get if you sell all the
 wines in the optimal order.
 
+Input
+Wines Prices=[2,3,5,1,4]
 
+Output
+50
+
+Explanation
+2*1+4*2+1*3+3*4+5*5=50
 */
