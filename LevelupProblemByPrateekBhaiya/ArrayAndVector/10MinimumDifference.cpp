@@ -3,9 +3,7 @@ O(N) :
 https://github.com/coding-minutes/dsa-levelUp-solutions-cpp/blob/master/Section%2002%20-%20array%20and%20vectors/minimumDifference.cpp
 */
 // O(N^2)
-#include <vector>
-#include <algorithm>
-#include <climits>
+#include <bits/stdc++.h>
 using namespace std;
 
 pair<int, int> minDifference(vector<int> a, vector<int> b)
