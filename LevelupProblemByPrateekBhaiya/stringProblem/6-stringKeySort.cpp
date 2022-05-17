@@ -72,8 +72,7 @@ int main()
         v.push_back(temp);
     }
     int key;
-    bool reversal;
-    string ordering;
+    string reversal, ordering;
     cin >> key >> reversal >> ordering;
     // 1. To extract keys for comparsion & store them
     vector<pair<string, string>> vp;
@@ -91,7 +90,7 @@ int main()
         sort(vp.begin(), vp.end(), lexicoCompare);
     }
     // 3. reversal
-    if (reversal == true)
+    if (reversal == "true")
     {
         reverse(vp.begin(), vp.end());
     }
